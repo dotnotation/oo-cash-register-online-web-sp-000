@@ -13,6 +13,7 @@ class CashRegister
       @items << item
     end
     @total += price * quantity
+    @last_transaction = price
   end
   
   def apply_discount
@@ -25,8 +26,8 @@ class CashRegister
   end
   
   def void_last_transaction
-    @items.last
-    @total - price.last 
+    #@items.last
+    @total - @last_transaction
   end
   
 end
